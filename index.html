@@ -28,6 +28,8 @@
             }
             
             #card_mat2 {
+                background: url(mat_bg.png) no-repeat;
+                background-size: contain;
                 width: 252px;
                 height: 306px;
                 float: left;
@@ -35,8 +37,9 @@
             }
             
             .panel2 {
-                background: url(card.png) no-repeat; 
-                background-size: contain;
+                background: none;
+                /*background: url(card.png) no-repeat;*/ 
+                /*background-size: contain;*/
                 /*border: 1px solid grey;*/
                 cursor: pointer;
                 transition: all .2s;
@@ -45,6 +48,16 @@
                 height: 76.5px;
                 positon: relative;
                 float: left;
+            }
+            
+            .panel2.selected {
+                background: url(your_card.png) no-repeat; 
+                background-size: contain;
+            }
+            
+            .panel2.selected:hover span {
+                background: blue;
+                opacity: .35;
             }
             
             span {

@@ -175,5 +175,13 @@ $(document).ready(function(){
         
     }
     
+    $(".panel2").click(function(){
+        $(this).addClass("selected");
+        /*
+        $(this).css("background","url(your_card.png) no-repeat");
+        $(this).css("background-size","contain");
+        */
+    });
+    
     
 });
