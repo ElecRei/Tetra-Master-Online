@@ -1,0 +1,98 @@
+<html>
+
+    <head>
+        <title>Tetra Master</title>
+        
+        <style>
+            
+            *{
+                box-sizing: border-box;
+            }
+        
+            #card_mat {
+                width:200px;
+                height: 300px;
+                float: left;
+                overflow:auto;
+            }
+            
+            .panel {
+                background: none;
+                border: 1px solid grey;
+                cursor: pointer;
+                transition: all .2s;
+                
+                width: 50px;
+                height: 75px;
+                float: left;
+            }
+            
+            #card_mat2 {
+                width: 252px;
+                height: 306px;
+                float: left;
+                overflow:auto;
+            }
+            
+            .panel2 {
+                background: url(card.png) no-repeat; 
+                background-size: contain;
+                /*border: 1px solid grey;*/
+                cursor: pointer;
+                transition: all .2s;
+                
+                width: 63px;
+                height: 76.5px;
+                positon: relative;
+                float: left;
+            }
+            
+            span {
+                width: 63px;
+                height: 76.5px;
+                position: absolute;
+                transition: all .2s;
+            }
+            
+            .panel:hover, .panel2:hover span{
+                /*background: #2ecc71;*/
+                background: #000;
+                opacity: .35;
+            }
+            
+            .panel.selected {
+                background: #2ecc71;
+            }
+            
+            .panel.cpu_selected {
+                background: #e74c3c;
+            }
+        
+        </style>
+        
+        <script
+          src="http://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous">
+        </script>
+        
+        <!-- JS file for tacker functionality -->
+        <script src="tmo.js"></script>
+        
+    </head>
+
+    <body>
+        
+        <div id="card_mat"></div>
+        
+        <br>
+        
+        <button id="submit" type="button" disabled>End Turn</button>
+        
+        <br><br>
+        
+        <div id="card_mat2"></div>
+        
+    </body>
+    
+</html>
