@@ -10,8 +10,8 @@
             }
         
             #card_mat {
-                width:200px;
-                height: 300px;
+                width: 252px;
+                height: 306px;
                 float: left;
                 overflow:auto;
             }
@@ -22,9 +22,14 @@
                 cursor: pointer;
                 transition: all .2s;
                 
-                width: 50px;
-                height: 75px;
+                width: 63px;
+                height: 76.5px;
                 float: left;
+            }
+            
+            .panel.blocked {
+                background: url(card.png) no-repeat;
+                background-size: contain;
             }
             
             #card_mat2 {
@@ -90,7 +95,8 @@
         </script>
         
         <!-- JS file for tacker functionality -->
-        <script src="tmo.js"></script>
+        <!--<script src="tmo.js"></script>-->
+        <script src="tmo_revised.js"></script>
         
     </head>
 
@@ -104,8 +110,10 @@
         
         <br><br>
         
+        <!--
         <div id="card_mat2"></div>
-        
+        -->
+
     </body>
     
 </html>

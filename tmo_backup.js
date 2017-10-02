@@ -69,7 +69,7 @@ $(document).ready(function(){
         if(cardClick < turnClicks){
         
             if($(this).hasClass("selected")){
-                //$(this).removeClass("selected");
+                $(this).removeClass("selected");
             }
             else{
                 $(this).addClass("selected");
@@ -125,56 +125,44 @@ $(document).ready(function(){
         }
         */
         
-        $("#submit").attr("disabled", true);
+        var cpuSelection = Math.floor(Math.random() * 16) + 1;
+        // playerPanels.indexOf(cpuSelection) > -1
+        var e = 0;
         
-        setTimeout(function(){
-        
-            var cpuSelection = Math.floor(Math.random() * 16) + 1;
-            // playerPanels.indexOf(cpuSelection) > -1
-            var e = 0;
-            var loopCount = 0;
-
-            while(e < 1){
-                if(playerPanels.indexOf(cpuSelection) > -1 || cpuPanels.indexOf(cpuSelection) > -1){
-                    cpuSelection = Math.floor(Math.random() * 16) + 1;
-                    console.log("CPU SELECTION " + cpuSelection);
-                    if(loopCount >= 16){break;};
-                }
-                else{
-                    e++;
-                    console.log("CPU number chosen: " + cpuSelection);
-                    if(loopCount >= 16){break;};
-                }
-                loopCount++;
-            }
-
-            cpuSelection = parseInt(cpuSelection);
-
-            cpuPanels.push(cpuSelection);
-
-            console.log("Player panels after cpu turns" + playerPanels);
-            console.log("CPU's panels: " + cpuPanels);
-            console.log("Computer selected" + cpuSelection);
-
-            if($("#" + cpuSelection).hasClass("cpu_selected")){
+        while(e < 1){
+            if(playerPanels.indexOf(cpuSelection) > -1 || cpuPanels.indexOf(cpuSelection) > -1){
+                cpuSelection = Math.floor(Math.random() * 16) + 1;
+                console.log("CPU SELECTION " + cpuSelection);
             }
             else{
-                $("#" + cpuSelection).addClass("cpu_selected");
+                e++;
+                console.log("CPU number chosen: " + cpuSelection);
             }
-
-            if(playerPanels.length + cpuPanels.length == 16){
-                alert("Game Finished!!");
-                $("#submit").attr("disabled", true);
-            }
-            else{
-                setTimeout(function(){
-                    alert("Your turn.");
-                    cardClick = 0;
-                    $("#submit").removeAttr("disabled");
-                }, 1000);
-            }
+        }
         
-        }, 1000);
+        cpuSelection = parseInt(cpuSelection);
+        
+        cpuPanels.push(cpuSelection);
+        
+        console.log("Player panels after cpu turns" + playerPanels);
+        console.log("CPU's panels: " + cpuPanels);
+        console.log("Computer selected" + cpuSelection);
+        
+        if($("#" + cpuSelection).hasClass("cpu_selected")){
+        }
+        else{
+            $("#" + cpuSelection).addClass("cpu_selected");
+        }
+        
+        if(playerPanels.length + cpuPanels.length == 16){
+            alert("Game Finished!!");
+            $("#submit").attr("disabled", true);
+        }
+        else{
+            alert("Your turn.");
+            cardClick = 0;
+        }
+        
         
     });
     

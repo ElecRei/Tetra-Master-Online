@@ -1,51 +1,8 @@
-
-/* 
-
-    Power Levels
-
-    0 = 0-10
-    1 = 11-20
-    2 = 21-30
-    3 = 31-40
-    4 = 41-50
-    5 = 51-60
-    6 =
-    7 =
-    8 =
-    9 =
-    A =
-    B =
-    C =
-    D =
-    E =
-    F =
-
-
-
-*/
-
 $(document).ready(function(){
     
-    /*
-    var arrayTest = [1,2,"3",4];
-    
-    var b = 3;
-    
-    if(arrayTest.includes(b)){
-        alert("Hello");
-    }
-    else{
-        alert("fail");
-    }
-    */
-    
-    //var test = Math.floor(Math.random() * 16) + 1; 
-    
-    //console.log(test);
+    /* Card Mat Setup */
     
     var cardMat = document.getElementById("card_mat");
-    
-    var turnClicks = 1;
    
     for(i=1; i <= 16; i++){
         
@@ -54,40 +11,76 @@ $(document).ready(function(){
         
     }
     
-    var playerPanels = [];
+    /* Player & CPU variables */
+    
+    var turnClicks = 1;
+    
+    var playerCards = 5;
+    
+    var playerPanels = []; // Needed to track what computer can pick
     
     var cardClick = 0;
     
     var lastPanel;
     
+    var cpuCards = 5;
+    
     var cpuLastPanel;
     
+    var cpuPanels = [];
+    
+    
+    function gameOverCheck() {
+        if(playerCards == 0 && cpuCards == 0){
+            $("#submit").attr("disabled", true);
+        }
+        else {
+            console.log("Player has " + playerCards + " cards remaining");
+            console.log("CPU has " + cpuCards + " cards remaining");
+        }
+    }
+    
+    function boardSetup() {
+        
+        var blockArray = [];
+        
+        for(i=0;i>5;i++){
+            var rNumber = Math.floor(Math.random() * 16) + 1;
+            blockArray.push(rNumber);
+            console.log(blockArray);
+        }
+        
+    }
+    
+    boardSetup();
+    
+    /* Player's Turn */
+    
     $(".panel").click(function(){
+        
+        gameOverCheck();
         
         console.log(cardClick);
         
         if(cardClick < turnClicks){
         
-            if($(this).hasClass("selected")){
+            if($(this).hasClass("selected") || $(this).hasClass("cpu_selected")){
                 //$(this).removeClass("selected");
+                alert("A card has been placed here already!");
             }
             else{
                 $(this).addClass("selected");
+                lastPanel = $(this).attr("id");
+                lastPanel = parseInt(lastPanel);
+                playerPanels.push(lastPanel);
+                cardClick++
+                playerCards--;
+                
+                $("#submit").removeAttr("disabled");
             }
-            
-            cardClick++ 
-            
-            lastPanel = $(this).attr("id");
-            
-            lastPanel = parseInt(lastPanel);
-            
-            playerPanels.push(lastPanel);
             
             console.log("Last panel clicked: " + lastPanel);
             console.log("Player's total panels: " + playerPanels);
-            
-            $("#submit").removeAttr("disabled");
-            
             console.log(cardClick);
         }
         else{
@@ -95,35 +88,11 @@ $(document).ready(function(){
         }
     });
     
-    var cpuPanels = [];
-    
-    //playerPanels.push(5);
+    /* CPU's Turn */
     
     $("#submit").click(function(){
         
-        /*
-        for(i=0;i<16;i++){
-            
-            
-            if($("#" + i).hasClass("selected")){
-                
-                console.log(i);
-                
-                if([i].indexOf(playerPanels) > -1){
-                   playerPanels.push(i);
-                }
-                else{
-                    
-                }
-                
-            }
-            
-            else{
-            }
-            
-            
-        }
-        */
+        gameOverCheck();
         
         $("#submit").attr("disabled", true);
         
@@ -162,37 +131,23 @@ $(document).ready(function(){
                 $("#" + cpuSelection).addClass("cpu_selected");
             }
 
-            if(playerPanels.length + cpuPanels.length == 16){
-                alert("Game Finished!!");
-                $("#submit").attr("disabled", true);
+            if(playerPanels.length + cpuPanels.length == 10){
+                setTimeout(function(){
+                    alert("Game Finished!!");
+                    $("#submit").attr("disabled", true);
+                }, 1000);
             }
             else{
                 setTimeout(function(){
                     alert("Your turn.");
                     cardClick = 0;
-                    $("#submit").removeAttr("disabled");
+                    cpuCards--;
+                    //$("#submit").removeAttr("disabled");
                 }, 1000);
             }
         
         }, 1000);
         
     });
-    
-    /*
-    
-    var cardMat2 = document.getElementById("card_mat2");
-    
-    for(i=1; i <= 16; i++){
-        
-        $(cardMat2).append("<div class='panel2' id='" + i + "a'><span></span></div>");
-        console.log("Panel " + i + " created.");
-        
-    }
-    
-    $(".panel2").click(function(){
-        $(this).addClass("selected");
-    });
-    
-    */
     
 });
