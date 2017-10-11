@@ -10,6 +10,9 @@
             }
         
             #card_mat {
+                background: url(mat_bg.png) no-repeat;
+                background-size: contain;
+                
                 width: 252px;
                 height: 306px;
                 float: left;
@@ -72,18 +75,20 @@
                 transition: all .2s;
             }
             
-            .panel:hover, .panel2:hover span{
+            .panel:hover span, .panel2:hover span{
                 /*background: #2ecc71;*/
-                background: #000;
-                opacity: .35;
+                background: skyblue;
+                opacity: .55;
             }
             
             .panel.selected {
-                background: #2ecc71;
+                background: url(your_card.png) no-repeat;
+                background-size: cover;
             }
             
             .panel.cpu_selected {
-                background: #e74c3c;
+                background: url(cpu_card.png) no-repeat;
+                background-size: cover;
             }
         
         </style>

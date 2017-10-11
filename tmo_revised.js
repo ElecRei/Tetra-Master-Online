@@ -6,7 +6,7 @@ $(document).ready(function(){
    
     for(i=1; i <= 16; i++){
         
-        $(cardMat).append("<div class='panel' id='" + i + "'></div>");
+        $(cardMat).append("<div class='panel' id='" + i + "'><span></span></div>");
         console.log("Panel " + i + " created.");
         
     }
