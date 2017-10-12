@@ -1,0 +1,105 @@
+<html>
+
+    <head>
+        <title>Tetra Master</title>
+        
+        <style>
+            
+            *{
+                box-sizing: border-box;
+            }
+        
+            #card_mat {
+                background: url(mat_bg.png) no-repeat;
+                background-size: contain;
+                
+                width: 252px;
+                height: 306px;
+                float: left;
+                overflow:auto;
+            }
+            
+            .panel {
+                background: url(your_card.png) no-repeat;
+                background-size: cover;
+                border: 1px solid grey;
+                cursor: pointer;
+                transition: all .2s;
+                
+                width: 63px;
+                height: 76.5px;
+                float: left;
+                position: relative;
+            }
+            
+            .panel:hover span.selection, .panel2:hover span{
+                /*background: #2ecc71;*/
+                background: skyblue;
+                opacity: .55;
+            }
+            
+            .selection {
+                width: 63px;
+                height: 76.5px;
+                position: absolute;
+                transition: all .2s;
+                
+                z-index: 100;
+            }
+            
+            .card_img {
+                background: url(card_img.png) no-repeat;
+                background-size: cover;
+                position: absolute;
+                
+                width: 100%;
+                height: 100%;
+                
+                z-index: 50;
+            }
+            
+            .arrow {
+                background: orange;
+                width: 10%;
+                height: 10%;
+                position: absolute; 
+                
+                z-index: 75;
+            }
+            
+            .top_left { top: 0px; left: 0px;}
+            .top_center {top: 0px; left: 50%; -webkit-transform: translate(-50%, 0);}
+            .top_right {top: 0px; left: 100%; -webkit-transform: translate(-100%, 0);}
+            
+            .left {top: 50%; left: 0px; -webkit-transform: translate(0, -50%);}
+            .right {top: 50%; left: 100%; -webkit-transform: translate(-100%, 0);}
+            
+            .bottom_left {top: 100%; left: 0px; -webkit-transform: translate(0, -100%);}
+            .bottom_center {top: 100%; left: 50%; -webkit-transform: translate(-50%, -100%);}
+            .bottom_right {top: 100%; left: 100%; -webkit-transform: translate(-100%, -100%);}
+        
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <div class="panel">
+            <span class="selection"></span>
+            <span class="arrow top_left"></span>
+            <span class="arrow top_center"></span>
+            <span class="arrow top_right"></span>
+            
+            <span class="arrow left"></span>
+            <span class="arrow right"></span>
+            
+            <span class="arrow bottom_left"></span>
+            <span class="arrow bottom_center"></span>
+            <span class="arrow bottom_right"></span>
+            
+            <span class="card_img"></span>
+        </div>
+
+    </body>
+    
+</html>
