@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+        <title>Loading Demo - CPU's Turn</title>
+        
+        <style>
+            
+            *{
+                box-sizing: border-box;
+            }
+            
+            span {
+                display: block;
+            }
+        
+            #demo_flicker {
+                border: solid 2px black;
+                
+                width: 50px;
+                height: 50px;
+            }
+            
+            .tick {
+                background: orange;
+                
+                width: 100%;
+                height: 100%;
+                padding: 30px;
+            }
+            
+            .tick#test {
+                background: green;
+            }
+        
+        </style>
+        
+        <script
+          src="http://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous">
+        </script>
+        
+        <!-- JS file for tacker functionality -->
+        <!--<script src="tmo.js"></script>-->
+        <!--<script src="js/tmo_revised.js"></script>-->
+        
+    </head>
+
+    <body>
+        
+        <div id="demo_flicker">
+            <span class="tick" id="test"></span>
+        </div>
+        
+        <div id="turn_meter">
+            <span class="tick" id="one"></span>
+            <span class="tick" id="two"></span>
+            <span class="tick" id="three"></span>
+            <span class="tick" id="four"></span>
+            <span class="tick" id="five"></span>
+        </div>
+
+    </body>
+    
+</html>
