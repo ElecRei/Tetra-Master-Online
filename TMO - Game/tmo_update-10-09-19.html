@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tetra Master Online</title>
+        <meta name="description" content="__">
+
+        <!-- CSS -->
+
+        <style>
+            
+            *{
+                box-sizing: border-box;
+            }
+        
+            #card_mat {
+                background: url(imgs/mat_bg.png) no-repeat;
+                background-size: contain;
+                
+                display: grid;
+                    grid-template-columns: repeat(4, 25%);
+                    grid-template-rows: repeat(4, 25%);
+                width: 252px;
+                height: 306px;
+                float: left;
+                overflow:auto;
+            }
+            
+            .panel {
+                background: none;
+                border: 1px solid grey;
+                cursor: pointer;
+                position: relative;
+                transition: all .2s;
+            }
+            
+            span {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transition: all .2s;
+            }
+            
+            .panel:hover span {
+                /*background: #2ecc71;*/
+                background: skyblue;
+                opacity: .55;
+            }
+            
+            .panel.selected {
+                background: url(imgs/your_card.png) no-repeat;
+                background-size: cover;
+            }
+            
+            .panel.cpu_selected {
+                background: url(imgs/cpu_card.png) no-repeat;
+                background-size: cover;
+            }
+            
+            .marked {
+              background-color: #dddddd;
+            }
+
+            .selected {
+             background-color: #aaaaaa;
+            }
+        
+        </style>
+        
+
+        <!-- JS + jQuery -->
+
+            <!-- jQuery v3.4.1 -->
+            <script
+                src="http://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+            </script>
+
+            <!-- JS file for tacker functionality -->
+            <!--<script src="tmo.js"></script>-->
+            <script src="js/sibs.js"></script>
+            <script src="js/tmo_card_placement.js"></script>
+    </head>
+    
+    
+    <body>
+        
+        <div id="card_mat"></div>
+        
+        <br>
+        
+        <button id="submit" type="button" disabled>End Turn</button>
+        
+        <br><br>
+        
+    </body>
+    
+</html>
