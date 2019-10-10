@@ -3,7 +3,7 @@ Play a game of Tetra Master if you're bored
 
 ## About this project
 
-Tetra Master Online is just a fun side-project of mine to make the mini-game from Square Enix's Final Fantasy IX playable online. The goal is to make a playable version of Tetra Master against AI. For more info on the the mini-game itself, [check out the Final Fantasy wiki article on it](https://finalfantasy.fandom.com/wiki/Tetra_Master_(minigame)).
+Tetra Master Online is just a fun side-project of mine to make the mini-game from Square Enix's Final Fantasy IX playable online. The goal is to make a playable version of Tetra Master against AI. For more info on the the mini-game itself, <a href="https://finalfantasy.fandom.com/wiki/Tetra_Master_(minigame)" target="_blank">check out the Final Fantasy wiki article on it</a>.
 
 ## Getting Started
 
