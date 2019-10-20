@@ -27,10 +27,29 @@
                 background: skyblue;
                 opacity: .55;
             }
+
+            .panel.two {
+                background: url(imgs/tm_cards.png) no-repeat;
+                background-size: cover;
+                border: 1px solid grey;
+                cursor: pointer;
+                transition: all .2s;
+                
+                width: 102px;
+                height: 124px;
+                float: left;
+                position: relative;
+            }
+            
+            .panel:hover span.selection, .panel2:hover span{
+                /*background: #2ecc71;*/
+                background: skyblue;
+                opacity: .55;
+            }
             
             .selection {
-                width: 63px;
-                height: 76.5px;
+                width: 100%;
+                height: 100%;
                 position: absolute;
                 transition: all .2s;
                 
@@ -56,6 +75,13 @@
                 
                 z-index: 75;
             }
+
+                .panel.two .arrow {
+                    background: url(imgs/arrow-top.png) no-repeat;
+                    background-size: auto;
+                    width: 25px;
+                    height: 25px;
+                }
             
             .top_left { top: 4px; left: 4px;}
             .top_center {top: 4px; left: 50%; -webkit-transform: translate(-50%, 0);}
@@ -75,6 +101,22 @@
     <body>
         
         <div class="panel">
+            <span class="selection"></span>
+            <span class="arrow top_left"></span>
+            <span class="arrow top_center"></span>
+            <span class="arrow top_right"></span>
+            
+            <span class="arrow left"></span>
+            <span class="arrow right"></span>
+            
+            <span class="arrow bottom_left"></span>
+            <span class="arrow bottom_center"></span>
+            <span class="arrow bottom_right"></span>
+            
+            <span class="card_img"></span>
+        </div>
+
+        <div class="panel two">
             <span class="selection"></span>
             <span class="arrow top_left"></span>
             <span class="arrow top_center"></span>

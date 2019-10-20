@@ -1,0 +1,111 @@
+<html>
+
+    <head>
+        <title>Tetra Master</title>
+        
+        <style>
+            
+            *{
+                box-sizing: border-box;
+            }
+
+            .parent {
+                background: orange;
+                width: 500px;
+                height: 500px;
+                position: relative;
+            }
+
+                .parent div {
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                }
+            
+                .red {
+                    background: red;
+                    z-index: 1;
+                }
+
+                .blue {
+                    background: blue;
+                    top: 20px;
+                    left: 20px;
+                    z-index: 2;
+                }
+
+                .green {
+                    background: green;
+                    top: 40px;
+                    left: 40px;
+                    z-index: 1;
+                }
+
+                .panel {
+                    border: 1px solid grey;
+                    cursor: pointer;
+                    transition: all .2s;
+                    
+                    width: 102px;
+                    height: 124px;
+                    float: left;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .card_frame {
+                    background: url(imgs/tm_card_frame.png) no-repeat;
+                    background-size: cover;
+
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    z-index: 100;
+                }
+
+                .card_bg {
+                    background: url(imgs/tm_card_bg.png) no-repeat;
+                    background-size: cover;
+
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+
+                    z-index: -100;
+                }
+                
+                .card_img {
+                    background: url(imgs/tm_card_img.png) no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    
+                    width: 100%;
+                    height: 100%;
+                    
+                    z-index: 0;
+                }
+            
+        
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <div class="parent">
+            <div class="red"></div>
+            <div class="blue"></div>
+            <div class="green"></div>
+        </div>
+
+        <div class="panel">
+            
+            <span class="card_frame"></span>
+            <span class="card_bg"></span>
+            
+            <span class="card_img"></span>
+        </div>
+
+    </body>
+    
+</html>
