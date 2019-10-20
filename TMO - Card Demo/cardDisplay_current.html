@@ -1,0 +1,136 @@
+<html>
+
+    <head>
+        <title>Tetra Master</title>
+        
+        <style>
+            
+            *{
+                box-sizing: border-box;
+            }
+            
+            .panel {
+                border: 1px solid grey;
+                cursor: pointer;
+                transition: all .2s;
+                
+                width: 102px;
+                height: 124px;
+                float: left;
+                position: relative;
+                z-index: 1;
+            }
+            
+            .panel:hover span.selection, .panel2:hover span{
+                /*background: #2ecc71;*/
+                background: skyblue;
+                opacity: .55;
+            }
+            
+            .panel:hover span.selection, .panel2:hover span{
+                /*background: #2ecc71;*/
+                background: skyblue;
+                opacity: .55;
+            }
+            
+            .selection {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transition: all .2s;
+                
+                z-index: 100;
+            }
+
+            .card_frame {
+                background: url(imgs/tm_card_frame.png) no-repeat;
+                background-size: cover;
+
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 10;
+            }
+
+            .card_bg {
+                background: url(imgs/tm_card_bg.png) no-repeat;
+                background-size: cover;
+
+                width: 100%;
+                height: 100%;
+                position: absolute;
+
+                z-index: 1;
+            }
+            
+            .card_img {
+                background: url(imgs/tm_card_img.png) no-repeat;
+                background-size: cover;
+                position: absolute;
+                
+                width: 100%;
+                height: 100%;
+                
+                z-index: 5;
+            }
+            
+            .arrow {
+                position: absolute; 
+                
+                z-index: 75;
+            }
+
+            /*
+            
+            .top_left { top: 4px; left: 4px;}
+            .top_center { top: 4px; left: 50%; -webkit-transform: translate(-50%, 0);}
+            .top_right { top: 4px; left: 96%; -webkit-transform: translate(-96%, 0);}
+            
+            .left { top: 50%; left: -1px; -webkit-transform: translate(0, -50%);}
+            .right { top: 50%; right: -1px; -webkit-transform: translate(-100%, -50%);}
+            
+            .bottom_left { bottom: -10px; left: 4px; -webkit-transform: translate(0, -96%);}
+            .bottom_center { bottom: -10px; left: 50%; -webkit-transform: translate(-50%, -96%);}
+            .bottom_right { bottom: -10px; left: 96%; -webkit-transform: translate(-96%, -96%);}
+            
+            */
+
+            .top_left { top: 4px; left: 4px; }
+            .top_center { top: 0; left: 50%; transform: translateX(-50%);}
+            .top_right { top: 4px; right: 4px; }
+            
+            .left { top: 50%; left: -1px; transform: translateY(-50%); }
+            .right { top: 50%; right: -1px; transform: translateY(-50%); }
+            
+            .bottom_left { bottom: 4px; left: 4px; }
+            .bottom_center { bottom: 0; left: 50%; transform: translateX(-50%); }
+            .bottom_right { bottom: 4px; right: 4px; }
+            
+            
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <div class="panel">
+            <span class="selection"></span>
+            <img src="imgs/arrow-top-left.png" class="arrow top_left" />
+            <img src="imgs/arrow-top.png" class="arrow top_center" />
+            <img src="imgs/arrow-top-right.png" class="arrow top_right" />
+            
+            <img src="imgs/arrow-left.png" class="arrow left" />
+            <img src="imgs/arrow-right.png" class="arrow right" />
+            
+            <img src="imgs/arrow-bot-left.png" class="arrow bottom_left" />
+            <img src="imgs/arrow-bottom.png" class="arrow bottom_center" />
+            <img src="imgs/arrow-bot-right.png" class="arrow bottom_right" />
+            
+            <span class="card_frame"></span>
+            <span class="card_bg"></span>
+            <span class="card_img"></span>
+        </div>
+
+    </body>
+    
+</html>
