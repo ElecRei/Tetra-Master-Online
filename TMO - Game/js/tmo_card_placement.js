@@ -56,7 +56,8 @@ $(document).ready(function(){
         
             if($(this).hasClass("selected") || $(this).hasClass("cpu_selected")){
                 //$(this).removeClass("selected");
-                alert("A card has been placed here already!");
+                //alert("A card has been placed here already!");
+                $('#dialog_box p').empty().append('A card has been placed here already!');
             }
             else{
                 $(this).addClass("selected");
@@ -73,7 +74,8 @@ $(document).ready(function(){
             console.log("Player's total panels: " + playerPanels);
         }
         else{
-            alert("Your turn has ended!");
+            //alert("Your turn has ended!");
+            $('#dialog_box p').empty().append('Your turn has ended!');
         }
     });
     
@@ -133,13 +135,15 @@ $(document).ready(function(){
 
             if(playerPanels.length + cpuPanels.length == 10){
                 setTimeout(function(){
-                    alert("Game Finished!!");
+                    //alert("Game Finished!!");
+                    $('#dialog_box p').empty().append('Game Finished!!');
                     $("#submit").attr("disabled", true);
                 }, 1000);
             }
             else{
                 setTimeout(function(){
-                    alert("Your turn.");
+                    //alert("Your turn.");
+                    $('#dialog_box p').empty().append('Your turn.');
                     turnClicks = 0;
                     cpuCards--;
                     //$("#submit").removeAttr("disabled");
