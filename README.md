@@ -18,6 +18,6 @@ Whether you want to help or just play with what's available so far, below are so
 
 * Check out the master branch "**Online Preview**" link to try out the latest demo
 
-#### Online Preview: https://codepen.io/ElecRei/pen/JjjdazJ (Updated - 10/21/19)
+#### Online Preview: https://codepen.io/ElecRei/pen/JjjdazJ (Updated - 11/06/19)
 
 #### Card Appearance Preview: https://codepen.io/ElecRei/pen/rGQVEe (Updated - 10/21/2017)
